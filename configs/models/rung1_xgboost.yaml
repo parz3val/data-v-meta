@@ -1,0 +1,6 @@
+# rung1_xgboost
+model: xgboost
+features: metadata
+seeds: [7, 42, 1337]
+decision_rules: [argmax, regress_round]  # THEORY.md: argmax=acc-optimal, regress-round=QWK-optimal
+notes: "Optuna 30 trials/20min cap. depth 3-10, lr 0.01-0.3 log, n_est 100-1500, subsample .5-1"

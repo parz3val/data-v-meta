@@ -1,0 +1,6 @@
+# metadata_noH ablation (OPS §8): metadata minus all g(H) features (history+contributor+pageviews)
+model: best_rung1
+features: metadata_noH
+seeds: [7, 42, 1337]
+decision_rules: [argmax, regress_round]
+notes: "THEORY prediction ii: score <= metadata"

@@ -1,0 +1,102 @@
+{
+ "mode": "full",
+ "updated": "2026-08-18T12:34:24+00:00",
+ "target_per_grade": 4000,
+ "per_grade": {
+  "Stub": 4000,
+  "Start": 4000,
+  "C": 4000,
+  "B": 4000,
+  "GA": 4000,
+  "FA": 4000
+ },
+ "excluded": {
+  "list_prefix": 2
+ },
+ "datasets": [
+  {
+   "name": "raw",
+   "stage": "raw",
+   "path": "data/full/raw/index.json",
+   "rows": 24000,
+   "cols": 22,
+   "bytes": 2040583,
+   "sha256": "7d6f1c8bc3d8e29d3ffa05d3dc276ce6568901cd66e0fe1f89563a6c42263ab0",
+   "created": "2026-08-18T12:24:48+00:00",
+   "producer_target": "data",
+   "parent": null
+  },
+  {
+   "name": "interim",
+   "stage": "interim",
+   "path": "data/full/interim/full.parquet",
+   "rows": 24000,
+   "cols": 39,
+   "bytes": 311951070,
+   "sha256": "afa98175412dc90a0ddb0f8f0cc77bfaa21c237b1fa634bf39a1907c1c8a7d52",
+   "created": "2026-08-18T12:34:20+00:00",
+   "producer_target": "clean-data",
+   "parent": null
+  },
+  {
+   "name": "sample",
+   "stage": "sample",
+   "path": "data/full/interim/sample.parquet",
+   "rows": 30,
+   "cols": 8,
+   "bytes": 13220,
+   "sha256": "ac8d2c7faf1014377e63b3cfd337a16d3e93c5183d00824c1beee6e48c70f4f8",
+   "created": "2026-08-18T12:34:20+00:00",
+   "producer_target": "clean-data",
+   "parent": "interim"
+  },
+  {
+   "name": "features",
+   "stage": "features",
+   "path": "data/full/features/features.parquet",
+   "rows": 24000,
+   "cols": 36,
+   "bytes": 1957971,
+   "sha256": "941ba3f4a7ce4938064d2f79cfdca376300e432b691cc77e243bb6aa61a5bd6b",
+   "created": "2026-08-18T12:34:23+00:00",
+   "producer_target": "features",
+   "parent": "interim"
+  },
+  {
+   "name": "splits_train",
+   "stage": "splits",
+   "path": "data/full/splits/train.parquet",
+   "rows": 16800,
+   "cols": 37,
+   "bytes": 1472440,
+   "sha256": "dad55c6f8c441cfabb88ed5fc4b26c339e262275bacba2d47adb9eb786c3225f",
+   "created": "2026-08-18T12:34:24+00:00",
+   "producer_target": "splits",
+   "parent": "features"
+  },
+  {
+   "name": "splits_val",
+   "stage": "splits",
+   "path": "data/full/splits/val.parquet",
+   "rows": 3600,
+   "cols": 37,
+   "bytes": 369435,
+   "sha256": "73abf48b7d5afba03036021791695f60f7a2d9893b1860da09e7465560113e66",
+   "created": "2026-08-18T12:34:24+00:00",
+   "producer_target": "splits",
+   "parent": "features"
+  },
+  {
+   "name": "splits_test",
+   "stage": "splits",
+   "path": "data/full/splits/test.parquet",
+   "rows": 3600,
+   "cols": 37,
+   "bytes": 369316,
+   "sha256": "d51d8692eb57bcb9140a0af93959ea6618a6521f764465729a0352d3e1f6c425",
+   "created": "2026-08-18T12:34:24+00:00",
+   "producer_target": "splits",
+   "parent": "features"
+  }
+ ]
+}

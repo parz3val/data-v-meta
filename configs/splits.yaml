@@ -1,0 +1,8 @@
+# Stratified frozen splits (SPEC §5 P2). Refuse overwrite once written.
+train: 0.70
+val: 0.15
+test: 0.15
+seed: 42
+stratify: label
+temporal_holdout_frac: 0.10   # latest 10% by grade date, flag column
+freeze: true

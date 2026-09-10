@@ -1,0 +1,8 @@
+# Wall-clock caps (SPEC §5, §7). monitor/budget.py raises BudgetExceeded -> save, log, continue.
+phases_h: {P1_collect_full: 12, P2_clean: 4, P3_eda: 3, P4_select_cpu: 6, P4_select_gpu: 2,
+           P5_train_gpu: 10, P5_train_cpu: 4, P6_eval: 2, P7_staleness: 6, P7_api: 3, P8_xai: 4, P9_report: 2}
+attempts_per_step: 3
+pytest_minutes: 20
+gpu_hours_total: 24
+optuna: {rung1_trials: 30, rung1_cap_min: 20, rung2_trials: 20, small_trials: 5}
+small_e2e_minutes: 45    # SMALL: all phases end-to-end on CPU < 45 min excl. build

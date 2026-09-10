@@ -1,0 +1,39 @@
+[
+ {
+  "config": "rung3_distilroberta_base_headtail",
+  "family": "text",
+  "macro_f1": 0.7657040852188023,
+  "ci_lo": 0.7508490863051261,
+  "ci_hi": 0.7796430064421498,
+  "qwk_argmax": 0.8893855274301308,
+  "qwk_regress_round": 0.9030205905205906,
+  "within_one": 0.9047222222222222,
+  "acc": 0.7666666666666667,
+  "ordinal_mae": 0.3541666666666667,
+  "ece": 0.06413514187766445,
+  "temporal_holdout_f1": 0.7651026227308569,
+  "infer_s_per_1k": 19.5878,
+  "device": "mps",
+  "epochs_ran": 3,
+  "params_m": 82.1
+ },
+ {
+  "config": "text_plus_H",
+  "family": "text_plus_H",
+  "macro_f1": 0.7863579194738061,
+  "ci_lo": 0.7732536112224527,
+  "ci_hi": 0.7991183643133875,
+  "qwk_argmax": 0.9051848991020566,
+  "qwk_regress_round": 0.919032545256702,
+  "within_one": 0.9188888888888889,
+  "acc": 0.7855555555555556,
+  "ordinal_mae": 0.31222222222222223,
+  "ece": 0.05834895768204325,
+  "temporal_holdout_f1": 0.8104390217420478,
+  "infer_s_per_1k": 0.0007,
+  "base": "catboost",
+  "text_tag": "rung3_distilroberta_base_headtail",
+  "fit_split": "val",
+  "note": "gH+logits; encoder infer cost NOT included in infer_s_per_1k"
+ }
+]

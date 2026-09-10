@@ -1,0 +1,15 @@
+# Project plan as executed. Official start: first week of June 2026; submission 2026-09-10.
+# Read by tools/render/render_diagrams.mjs (Gantt in Chapter 1). Dates are week-of.
+start: 2026-06-01
+submission: 2026-09-10
+phases:
+  - {name: "Proposal and framing", start: 2026-06-01, end: 2026-06-14, lane: framing}
+  - {name: "Literature search and screening", start: 2026-06-08, end: 2026-07-12, lane: literature}
+  - {name: "Literature re-opened (2024-26 sweep)", start: 2026-08-24, end: 2026-09-02, lane: literature}
+  - {name: "Data collection: small, medium, full", start: 2026-06-15, end: 2026-07-26, lane: data}
+  - {name: "Cleaning, features and exploration", start: 2026-06-29, end: 2026-07-19, lane: data}
+  - {name: "Metadata models and tuning", start: 2026-07-13, end: 2026-08-16, lane: modelling}
+  - {name: "Encoder fine-tuning, fusion and ablations", start: 2026-08-10, end: 2026-08-30, lane: modelling}
+  - {name: "Staleness and explanation studies", start: 2026-08-17, end: 2026-08-31, lane: modelling}
+  - {name: "Research platform and demo app", start: 2026-08-03, end: 2026-09-08, lane: platform}
+  - {name: "Report writing and revision", start: 2026-08-31, end: 2026-09-10, lane: report}

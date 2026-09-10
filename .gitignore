@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+results/full/models/*.pkl
+results/full/models/*.pt
+data/full/raw/*.jsonl
+data/full/interim/full.parquet
+mlruns/
+catboost_info/

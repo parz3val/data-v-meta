@@ -1,0 +1,6 @@
+# rung2_mlp
+model: mlp
+features: metadata
+seeds: [7, 42, 1337]
+decision_rules: [argmax, regress_round]  # THEORY.md: argmax=acc-optimal, regress-round=QWK-optimal
+notes: "2-3 layers of 64, 128 or 256 units, L2 1e-5-1e-2 log, lr 1e-4-1e-2 log, 20 trials. Negative result allowed if < +1 macro-F1 over rung1."

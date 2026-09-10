@@ -1,0 +1,16 @@
+# Feature families (SPEC §5 P2). Each named feature: docstring + fixture test in src/wqa/features.
+structural: [bytes, words, sentences, sections_l2, sections_l3, infobox, images, tables, lists,
+             wikilinks, extlinks, categories, templates, cleanup_tags, lead_length]
+reference: [ref_n, refs_per_1k_words, refs_distinct, cite_template_mix, doi_n, isbn_n]
+history: [edits, editors, edits_per_editor, anon_share, bot_share, reverted_n, age_days,
+          days_since_edit, edits_90d]
+contributor: [top_editor_share]   # NOT COLLECTED if over budget; state in manifest
+pageviews: [views_90d_mean, views_90d_log]
+# g(H) = history + contributor + pageviews (THEORY.md split); f(X) = structural + reference
+leakage_exclusions:   # never features; absence is tested (test_leakage)
+  - talk_page_anything
+  - assessment_templates
+  - "{{featured article}}"
+  - "{{good article}}"
+  - grade_stating_templates
+text_input: "mwparserfromhell.strip_code() minus icon templates; token counts stored per tokenizer"

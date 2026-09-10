@@ -1,0 +1,6 @@
+# text_plus_H ablation (OPS §8): text-arm logits/pooled embedding + g(H) into best rung-1 learner
+model: best_rung1
+features: text_plus_H
+seeds: [7, 42, 1337]
+decision_rules: [argmax, regress_round]
+notes: "THEORY prediction i: score >= max(text, metadata)"

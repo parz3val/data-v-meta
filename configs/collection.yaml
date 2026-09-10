@@ -1,0 +1,26 @@
+# Wikimedia collection (SPEC §4.3, §5 P1). email blank => collector refuses to run.
+email: iamtheparzival@gmail.com
+user_agent: "wqa-msc-project/0.1 ({email}; research)"
+api: https://en.wikipedia.org/w/api.php
+pageviews_api: https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia
+maxlag: 5
+batch_titles: 50        # titles per request, one request stream
+persist_every: 100      # flush + manifest update cadence; resume without refetch
+backoff: {start_s: 2, max_s: 60, jitter: true}
+grades: [Stub, Start, C, B, GA, FA]
+small: {per_grade: 150, seed: 42}
+medium: {per_grade: 400, seed: 42}  # owner-authorized 2026-08-25 (data-level experiment)
+full: {per_grade: 4000, fa_ceiling: 6500}
+smoke: {per_grade: 20, seed: 42}
+exclude:                # log excluded counts into manifest.excluded
+  redirects: true
+  disambigs: true
+  list_prefix: "List of"
+  list_category: "Category:Lists"
+  min_bytes_non_stub: 100
+pageviews_days: 90
+sources:
+  fa_category: "Category:Featured articles"
+  ga_category: "Category:Good articles"
+  lower_via: pageassessments   # Stub-B via PageAssessments across WikiProjects, uniform over union
+label_rule: highest_grade_wins # keep all (project,class) pairs; n_projects, n_disagree kept as features

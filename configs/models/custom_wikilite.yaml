@@ -1,0 +1,6 @@
+# custom_wikilite — new-algorithm experiment 2026-08-25 (plugin src/wqa/models/custom/wikilite.py)
+model: wikilite
+features: metadata
+seeds: [7, 42, 1337]
+decision_rules: [argmax, regress_round]
+notes: "see plugin docstring for hypothesis + citation"

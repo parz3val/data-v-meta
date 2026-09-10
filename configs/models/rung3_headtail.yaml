@@ -1,0 +1,6 @@
+# rung3_headtail
+model: deberta-v3-base
+features: metadata
+seeds: [7, 42, 1337]
+decision_rules: [argmax, regress_round]  # THEORY.md: argmax=acc-optimal, regress-round=QWK-optimal
+notes: "head+tail truncation (128 head + 382 tail) smoke"

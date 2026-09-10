@@ -1,0 +1,6 @@
+# rung0_logreg
+model: logreg
+features: metadata
+seeds: [7, 42, 1337]
+decision_rules: [argmax, regress_round]  # THEORY.md: argmax=acc-optimal, regress-round=QWK-optimal
+notes: "L2 logistic regression on scaled metadata. C: [0.01,100] log."
